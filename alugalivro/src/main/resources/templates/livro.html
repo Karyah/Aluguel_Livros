@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link href="/styles/main.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+</head>	
+
+<body>
+	
+	<div class="d-flex flex p-4 darker-color justify-content-between">
+		<h4 class="pt-1 ms-2 darker-color titulo"> <a href="/home"> Aluga Livro  <a> </h4>	
+		<span class="pt-1 ms-2"> <a href="/perfil">Perfil</a> 	</span>	
+	</div>
+	
+
+	<div class="container d-flex darker-color mt-2 px-2 py-2">
+		
+		<div class= " my-2 mx-2 w-40 p-2 color-book-container text-center rounded">
+			<h3 th:text="${livro.titulo}"></h3>
+			<h5 th:text="${livro.autor}"></h5>
+			<img th:src="${livro.urlImagem}">
+		
+		</div>
+	
+		<div class="w-50 darker-color m-2">
+			<h2>Descrição</h2>
+			<h6 th:text="${livro.genero}"></h6>
+			<p th:text="${livro.sinopse}"></p>
+			
+			<form th:action="@{'/livro/'+${livro.id}}" method="post">
+				<h3>Valor: 5,00</h3>
+				<button class="btn btn-primary my-3" type="submit">Alugar</button>
+			</form>
+		</div>
+	
+	</div>
+</body>
+</html>

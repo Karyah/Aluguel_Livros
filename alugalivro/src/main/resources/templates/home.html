@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link href="/styles/main.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+</head>	
+
+<body>
+	
+	<div class="d-flex flex p-4 darker-color justify-content-between">
+		<h4 class="pt-1 ms-2 darker-color titulo"> <a href="/home"> Aluga Livro  <a> </h4>	
+		<span class="pt-1 ms-2" th:if="${logado == 'true'}"> <a href="/perfil">Perfil</a> 	</span>	
+		<span class="pt-1 ms-2 " th:if="${logado == 'false'}"> <a href="/login"> Login </a> </span>
+
+	</div>
+	
+
+	<nav class="navbar navbar-expand  d-flex justify-content-between mb-3 nav-color">
+			<div class="navbar-nav nav-color">
+				<span class="mx-2"></span>
+				<a th:classppend="${genero} == null ? 'active'" class=" nav-link nav-color" href="/home">Todos</a>
+				<a th:classppend="${genero} == romance ? 'active'" class="nav-link nav-color"href="/home/romance">Romance</a>
+				<a th:classppend="${genero} == terror ? 'active'" class="nav-link nav-color"href="/home/terror">Terror</a>
+				<a th:classppend="${genero} == misterio ? 'active'" class="nav-link nav-color"href="/home/misterio">Mistério</a>
+			</div>
+	</nav>
+
+	
+	<div class="container">
+	<div class="row px-md-5 d-flex p-2">
+		
+	<div class="mb-2 col-3" th:each="livro: ${livros}">
+			
+			<div class="d-flex flex-row flex-wrap justify-content-center">
+				
+			<div class="col-11 py-2 px-2 color-book-container container-fluid "  >
+				
+				<img class="img-fluid mt-2" th:src="${livro.urlImagem}">
+				<h6 class="text-center mt-2 " th:text=${livro.titulo}></h6>	
+				<div class="text-center color-book-container" th:text=${livro.autor}></div>	
+				
+				<div class="text-center">
+					<a th:href="@{'/livro/'+${livro.id}}"><button class="btn px-5 btn-primary mt-2 ">  Alugar </button></a>
+				</div>
+			</div>
+	</div>
+	</div>
+	</div>
+	<h1>
+
+	</h1>
+</body>
+</html>

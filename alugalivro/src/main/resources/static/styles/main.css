@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+
+.darker-color{
+	background-color: #323232;
+}
+
+.titulo a{
+	text-decoration:none;
+}
+
+.color-book-container{
+	background-color: #D9D9D9;
+	color: #000000;
+}
+*{
+    color: #4195F7;
+    font-family: 'PT Sans', sans-serif;
+}
+
+.nav-color{
+    background-color: #2B2B2B;
+    color: #FFFFFF
+}
+
+body {
+    background-color: #505050;
+    
+}
+
+
+button a{
+	color:#FFFFFF;
+}
