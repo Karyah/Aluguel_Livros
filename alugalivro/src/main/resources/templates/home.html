@@ -23,6 +23,12 @@
 				<a th:classppend="${genero} == romance ? 'active'" class="nav-link nav-color"href="/home/romance">Romance</a>
 				<a th:classppend="${genero} == terror ? 'active'" class="nav-link nav-color"href="/home/terror">Terror</a>
 				<a th:classppend="${genero} == misterio ? 'active'" class="nav-link nav-color"href="/home/misterio">Mistério</a>
+				<a th:classppend="${genero} == fantasia ? 'active'" class="nav-link nav-color"href="/home/fantasia">Fantasia</a>
+				<a th:classppend="${genero} == ficcao ? 'active'" class="nav-link nav-color"href="/home/ficcao">Ficção</a>
+				<a th:classppend="${genero} == infantil ? 'active'" class="nav-link nav-color"href="/home/infantil">Infantil</a>
+				<a th:classppend="${genero} == biografia ? 'active'" class="nav-link nav-color"href="/home/biografia">Biografia</a>
+				<a th:classppend="${genero} == aventura ? 'active'" class="nav-link nav-color"href="/home/aventura">Aventura</a>
+				
 			</div>
 	</nav>
 
@@ -36,7 +42,8 @@
 				
 			<div class="col-11 py-2 px-2 color-book-container container-fluid "  >
 				
-				<img class="img-fluid mt-2" th:src="${livro.urlImagem}">
+				<img class="w-100" th:src="${livro.urlImagem}">
+		
 				<h6 class="text-center mt-2 " th:text=${livro.titulo}></h6>	
 				<div class="text-center color-book-container" th:text=${livro.autor}></div>	
 				

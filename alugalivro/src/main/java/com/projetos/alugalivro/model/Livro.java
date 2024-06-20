@@ -22,7 +22,6 @@ import lombok.Setter;
 @NoArgsConstructor
 @Entity
 @Table
-
 public class Livro {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

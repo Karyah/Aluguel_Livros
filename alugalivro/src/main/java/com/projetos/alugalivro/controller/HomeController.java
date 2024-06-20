@@ -31,8 +31,7 @@ public class HomeController {
         this.authenticationService = authenticationService;
     }
 	
-	@GetMapping
-	
+	@GetMapping	
 	public ModelAndView listar() {
 		List<Livro> livros = livroService.findAll();;
 		String logado = String.valueOf(authenticationService.isLogged());
